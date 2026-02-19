@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thulani Mtsuki Attorneys</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --burgundy: #6B1A2A;
+      --burgundy-dark: #4a1120;
+      --burgundy-light: #8c2438;
+      --white: #fdfaf7;
+      --off-white: #f5f0eb;
+      --charcoal: #2a2a2a;
+      --mid-gray: #6b6b6b;
+      --light-gray: #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--white);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(253, 250, 247, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--light-gray);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--burgundy);
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--burgundy); }
+
+    .nav-cta {
+      background: var(--burgundy);
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+    }
+
+    .nav-cta:hover { background: var(--burgundy-dark); color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      background: var(--burgundy);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 300px; height: 300px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 5vw, 64px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hero-title span {
+      font-weight: 700;
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      max-width: 400px;
+      margin-bottom: 48px;
+      font-weight: 300;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--burgundy);
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover { background: var(--off-white); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.5);
+      color: var(--white);
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+    .hero-right {
+      background: var(--off-white);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 80px 70px;
+      position: relative;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .stat-item {}
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--burgundy);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-top: 8px;
+    }
+
+    .hero-quote {
+      border-left: 3px solid var(--burgundy);
+      padding-left: 24px;
+    }
+
+    .hero-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    /* SECTION SHARED */
+    section { padding: 100px 60px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--charcoal);
+    }
+
+    .section-title strong { font-weight: 700; }
+
+    /* PRACTICE AREAS */
+    .practice {
+      background: var(--white);
+    }
+
+    .practice-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 80px;
+      align-items: end;
+    }
+
+    .practice-intro {
+      font-size: 16px;
+      color: var(--mid-gray);
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    .practice-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .practice-card {
+      background: var(--off-white);
+      padding: 60px 50px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      cursor: default;
+    }
+
+    .practice-card:hover {
+      background: var(--burgundy);
+    }
+
+    .practice-card:hover .practice-card-title,
+    .practice-card:hover .practice-card-text,
+    .practice-card:hover .practice-card-list li {
+      color: var(--white);
+    }
+
+    .practice-card:hover .practice-card-number {
+      color: rgba(255,255,255,0.15);
+    }
+
+    .practice-card:hover .practice-card-icon {
+      border-color: rgba(255,255,255,0.3);
+      color: var(--white);
+    }
+
+    .practice-card-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      font-weight: 700;
+      color: var(--light-gray);
+      position: absolute;
+      top: 20px; right: 30px;
+      line-height: 1;
+      transition: color 0.4s;
+    }
+
+    .practice-card-icon {
+      width: 48px; height: 48px;
+      border: 1px solid var(--light-gray);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      font-size: 20px;
+      color: var(--burgundy);
+      transition: all 0.4s;
+    }
+
+    .practice-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+      transition: color 0.4s;
+    }
+
+    .practice-card-text {
+      font-size: 14px;
+      color: var(--mid-gray);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-weight: 300;
+      transition: color 0.4s;
+    }
+
+    .practice-card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .practice-card-list li {
+      font-size: 13px;
+      color: var(--mid-gray);
+      padding-left: 16px;
+      position: relative;
+      transition: color 0.4s;
+    }
+
+    .practice-card-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--burgundy);
+    }
+
+    .practice-card:hover .practice-card-list li::before {
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* WHY US */
+    .why {
+      background: var(--burgundy);
+      color: var(--white);
+    }
+
+    .why .section-label { color: rgba(255,255,255,0.6); }
+    .why .section-title { color: var(--white); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px;
+      margin-top: 70px;
+    }
+
+    .why-item {}
+
+    .why-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 16px;
+    }
+
+    .why-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .why-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .why-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--off-white);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 40px;
+      border-top: 3px solid var(--burgundy);
+    }
+
+    .testimonial-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .testimonial-author {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+    }
+
+    .testimonial-role {
+      font-size: 12px;
+      color: var(--mid-gray);
+      margin-top: 4px;
+    }
+
+    /* PAGES — ABOUT & CONTACT */
+    .page-section {
+      display: none;
+      min-height: 100vh;
+      padding-top: 120px;
+    }
+
+    .page-section.active { display: block; }
+
+    /* ABOUT PAGE */
+    .about-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 60vh;
+    }
+
+    .about-hero-left {
+      background: var(--burgundy);
+      padding: 80px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-hero-right {
+      background: var(--off-white);
+      padding: 80px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-body {
+      padding: 100px 60px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-sidebar {}
+
+    .about-credentials {
+      margin-top: 40px;
+    }
+
+    .credential-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .credential-item:last-child { border-bottom: none; }
+
+    .credential-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 6px;
+    }
+
+    .credential-value {
+      font-size: 14px;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    .about-content p {
+      font-size: 16px;
+      color: var(--mid-gray);
+      line-height: 1.9;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .about-content p:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    /* CONTACT PAGE */
+    .contact-hero {
+      background: var(--burgundy);
+      padding: 100px 60px 60px;
+    }
+
+    .contact-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 70vh;
+    }
+
+    .contact-info {
+      background: var(--off-white);
+      padding: 80px 70px;
+    }
+
+    .contact-info-item {
+      margin-bottom: 40px;
+    }
+
+    .contact-info-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 10px;
+    }
+
+    .contact-info-value {
+      font-size: 15px;
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    .contact-form-area {
+      background: var(--white);
+      padding: 80px 70px;
+    }
+
+    .form-group {
+      margin-bottom: 28px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 10px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 14px 0;
+      border: none;
+      border-bottom: 1px solid var(--light-gray);
+      background: transparent;
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.3s;
+      appearance: none;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-bottom-color: var(--burgundy);
+    }
+
+    .form-textarea { resize: none; height: 100px; }
+
+    .form-submit {
+      background: var(--burgundy);
+      color: var(--white);
+      border: none;
+      padding: 16px 48px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.3s;
+      width: 100%;
+    }
+
+    .form-submit:hover { background: var(--burgundy-dark); }
+
+    /* FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+      padding: 40px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    /* PAGE TRANSITIONS */
+    main > div {
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 60px 24px; }
+
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 60px 24px; min-height: 70vh; }
+      .hero-right { padding: 60px 24px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+
+      .practice-header { grid-template-columns: 1fr; }
+      .practice-cards { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      .about-hero { grid-template-columns: 1fr; }
+      .about-hero-left, .about-hero-right { padding: 60px 24px; }
+      .about-body { padding: 60px 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .contact-hero { padding: 80px 24px 40px; }
+      .contact-body { grid-template-columns: 1fr; }
+      .contact-info, .contact-form-area { padding: 60px 24px; }
+
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo" onclick="showPage('home'); return false;">Thulani Mtsuki Attorneys</a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+      <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
+      <li><a href="#" onclick="showPage('contact'); return false;" class="nav-cta">Book Consultation</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HOME PAGE -->
+    <div id="page-home">
+
+      <!-- HERO -->
+      <section class="hero" style="padding: 0;">
+        <div class="hero-left">
+          <p class="hero-eyebrow">Admitted Attorneys · Emalahleni, Mpumalanga</p>
+          <h1 class="hero-title">
+            Justice Starts
+            <span>With the Right<br>Attorney.</span>
+          </h1>
+          <p class="hero-sub">Thulani Mtsuki Attorneys provides dedicated legal representation in divorce and family law, and criminal defence — serving clients across Mpumalanga with integrity and expertise.</p>
+          <div class="hero-buttons">
+            <a href="#" onclick="showPage('contact'); return false;" class="btn-primary">Book a Consultation</a>
+            <a href="#" onclick="showPage('about'); return false;" class="btn-outline">Meet the Attorney</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Cases Handled</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">2</div>
+              <div class="stat-label">Areas of Practice</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Client Focused</div>
+            </div>
+          </div>
+          <div class="hero-quote">
+            <p>"Every client deserves focused, skilled representation — regardless of the complexity of their case."</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRACTICE AREAS -->
+      <section class="practice">
+        <div class="practice-header">
+          <div>
+            <p class="section-label">Our Expertise</p>
+            <h2 class="section-title">Two Areas,<br><strong>One Commitment.</strong></h2>
+          </div>
+          <p class="practice-intro">We focus exclusively on divorce and family law, and criminal defence — ensuring that every client benefits from deep, specialised knowledge in their legal matter rather than a generalist approach.</p>
+        </div>
+        <div class="practice-cards">
+          <div class="practice-card">
+            <span class="practice-card-number">01</span>
+            <div class="practice-card-icon">⚖</div>
+            <h3 class="practice-card-title">Divorce Law</h3>
+            <p class="practice-card-text">Navigating a divorce is one of life's most difficult moments. We guide clients through the process with care, clarity, and a focus on the best possible outcome for them and their families.</p>
+            <ul class="practice-card-list">
+              <li>Contested and uncontested divorces</li>
+              <li>Division of assets and property</li>
+              <li>Child custody and maintenance</li>
+              <li>Spousal support (alimony)</li>
+              <li>Protection orders</li>
+            </ul>
+          </div>
+          <div class="practice-card">
+            <span class="practice-card-number">02</span>
+            <div class="practice-card-icon">🛡</div>
+            <h3 class="practice-card-title">Criminal Law</h3>
+            <p class="practice-card-text">Being accused of a crime can be overwhelming. We provide robust criminal defence at all court levels, protecting your rights from arrest through to trial and beyond.</p>
+            <ul class="practice-card-list">
+              <li>Bail applications</li>
+              <li>Criminal defence at all court levels</li>
+              <li>Appeals and reviews</li>
+              <li>Assault, theft, and fraud matters</li>
+              <li>Traffic and road offences</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY US -->
+      <section class="why">
+        <p class="section-label">Why Choose Us</p>
+        <h2 class="section-title">What Sets Us <strong>Apart.</strong></h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-number">01</div>
+            <div class="why-divider"></div>
+            <h3 class="why-title">Specialised Focus</h3>
+            <p class="why-text">We don't try to be everything to everyone. By focusing on divorce and criminal law, we bring depth of knowledge that a general practice cannot match.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-number">02</div>
+            <div class="why-divider"></div>
+            <h3 class="why-title">Personal Attention</h3>
+            <p class="why-text">Your matter is handled directly by Thulani Mtsuki — not passed off to a junior. You receive dedicated, hands-on representation from start to finish.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-number">03</div>
+            <div class="why-divider"></div>
+            <h3 class="why-title">Local Expertise</h3>
+            <p class="why-text">Based in Emalahleni, Mpumalanga, we have deep knowledge of the local courts, magistrates, and legal landscape — giving clients a practical advantage.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="testimonials">
+        <p class="section-label">Client Testimonials</p>
+        <h2 class="section-title">Trusted by <strong>Real Clients.</strong></h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"Mr Mtsuki guided me through my divorce with professionalism and compassion. He kept me informed every step of the way and achieved an outcome I never thought possible."</p>
+            <p class="testimonial-author">T. Nkosi</p>
+            <p class="testimonial-role">Divorce matter, Emalahleni</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"I was terrified when I was arrested. Thulani Mtsuki Attorneys got me bail and handled my case expertly. I felt like I had someone truly in my corner."</p>
+            <p class="testimonial-author">S. Mahlangu</p>
+            <p class="testimonial-role">Criminal defence, Mpumalanga</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"Highly recommended. Honest, straightforward advice with no surprises. They fought hard for custody of my children and delivered results."</p>
+            <p class="testimonial-author">L. Dlamini</p>
+            <p class="testimonial-role">Custody matter, Emalahleni</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /home -->
+
+    <!-- ABOUT PAGE -->
+    <div id="page-about" style="display:none;">
+      <div class="about-hero">
+        <div class="about-hero-left">
+          <p class="section-label" style="color:rgba(255,255,255,0.6);">About the Firm</p>
+          <h1 class="section-title" style="color:white;">Thulani Mtsuki<br><strong>Attorneys</strong></h1>
+        </div>
+        <div class="about-hero-right">
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--charcoal); line-height: 1.6;">A trusted legal practice serving the people of Emalahleni and Mpumalanga with dedication and expertise.</p>
+        </div>
+      </div>
+      <div class="about-body">
+        <div class="about-grid">
+          <div class="about-sidebar">
+            <p class="section-label">Credentials</p>
+            <div class="about-credentials">
+              <div class="credential-item">
+                <p class="credential-label">Firm Name</p>
+                <p class="credential-value">Thulani Mtsuki Attorneys</p>
+              </div>
+              <div class="credential-item">
+                <p class="credential-label">Location</p>
+                <p class="credential-value">Viecon Centre, 25 Haig Ave<br>Emalahleni, Mpumalanga</p>
+              </div>
+              <div class="credential-item">
+                <p class="credential-label">Practice Areas</p>
+                <p class="credential-value">Divorce Law<br>Criminal Law</p>
+              </div>
+              <div class="credential-item">
+                <p class="credential-label">Contact</p>
+                <p class="credential-value">013 656 6177<br>mtsukiattorneys@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-content">
+            <p>Thulani Mtsuki Attorneys is a committed legal practice based in the heart of Emalahleni, Mpumalanga, dedicated to providing accessible, professional legal services to individuals and families navigating some of the most challenging moments of their lives.</p>
+            <p>The firm was founded on the belief that every person — regardless of their background or circumstances — deserves skilled, honest legal representation. With a focused practice in divorce and family law, and criminal defence, we bring deep expertise and genuine care to every matter we handle.</p>
+            <p>As an admitted attorney of the High Court of South Africa, Thulani Mtsuki brings years of courtroom experience, thorough legal knowledge, and a personal approach that many larger firms simply cannot offer. Clients work directly with Mr Mtsuki throughout their matter — not junior staff or assistants.</p>
+            <p>Our office is conveniently located at the Viecon Centre in Emalahleni, making us accessible to clients across the greater Mpumalanga region. Whether you need guidance through a difficult divorce, representation in a criminal matter, or simply sound legal advice, we are here to help.</p>
+            <a href="#" onclick="showPage('contact'); return false;" style="display:inline-block; margin-top: 16px; background: var(--burgundy); color: white; padding: 14px 36px; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; border-radius: 2px;">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div><!-- /about -->
+
+    <!-- CONTACT PAGE -->
+    <div id="page-contact" style="display:none;">
+      <div class="contact-hero">
+        <p class="section-label" style="color:rgba(255,255,255,0.6);">Get In Touch</p>
+        <h1 class="section-title" style="color:white;">Book a <strong>Consultation.</strong></h1>
+      </div>
+      <div class="contact-body">
+        <div class="contact-info">
+          <p class="section-label">Our Details</p>
+          <div class="contact-info-item">
+            <p class="contact-info-label">Address</p>
+            <p class="contact-info-value">Viecon Centre<br>25 Haig Avenue<br>Emalahleni, Mpumalanga, 1034</p>
+          </div>
+          <div class="contact-info-item">
+            <p class="contact-info-label">Phone</p>
+            <p class="contact-info-value">013 656 6177</p>
+          </div>
+          <div class="contact-info-item">
+            <p class="contact-info-label">Email</p>
+            <p class="contact-info-value">mtsukiattorneys@gmail.com</p>
+          </div>
+          <div class="contact-info-item">
+            <p class="contact-info-label">Office Hours</p>
+            <p class="contact-info-value">Monday – Friday: 8:00 AM – 5:00 PM<br>Saturday: By appointment</p>
+          </div>
+        </div>
+        <div class="contact-form-area">
+          <p class="section-label">Send a Message</p>
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" placeholder="Your contact number" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" placeholder="Your email address" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Legal Matter</label>
+              <select class="form-select">
+                <option value="">Select a practice area</option>
+                <option>Divorce Law</option>
+                <option>Criminal Law</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Brief Description</label>
+              <textarea class="form-textarea" placeholder="Briefly describe your matter..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div><!-- /contact -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Thulani Mtsuki Attorneys</span>
+    <span>Viecon Centre, 25 Haig Ave, Emalahleni, Mpumalanga · 013 656 6177</span>
+    <span>© 2025 Thulani Mtsuki Attorneys. All rights reserved.</span>
+  </footer>
+
+  <script>
+    function showPage(name) {
+      ['home', 'about', 'contact'].forEach(p => {
+        document.getElementById('page-' + p).style.display = p === name ? 'block' : 'none';
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for your message. Thulani Mtsuki Attorneys will be in touch shortly.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
