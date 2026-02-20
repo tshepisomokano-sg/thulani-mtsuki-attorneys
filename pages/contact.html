@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Thulani Mtsuki Attorneys</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">Thulani Mtsuki Attorneys</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Consultation</a></li>
+    </ul>
+  </nav>
+
+  <main class="fade-in">
+
+    <!-- HERO -->
+    <div class="contact-hero">
+      <p class="section-label" style="color:rgba(255,255,255,0.6);">Get In Touch</p>
+      <h1 class="section-title" style="color:white;">Book a <strong>Consultation.</strong></h1>
+    </div>
+
+    <!-- CONTACT BODY -->
+    <div class="contact-body">
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <p class="section-label">Our Details</p>
+        <div class="contact-info-item">
+          <p class="contact-info-label">Address</p>
+          <p class="contact-info-value">Viecon Centre<br>25 Haig Avenue<br>Emalahleni, Mpumalanga, 1034</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">Phone</p>
+          <p class="contact-info-value">013 656 6177</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">Email</p>
+          <p class="contact-info-value">mtsukiattorneys@gmail.com</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">Office Hours</p>
+          <p class="contact-info-value">Monday – Friday: 8:00 AM – 5:00 PM<br>Saturday: By appointment</p>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-form-area">
+        <p class="section-label">Send a Message</p>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="Your contact number" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="Your email address" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Legal Matter</label>
+            <select class="form-select">
+              <option value="">Select a practice area</option>
+              <option>Divorce Law</option>
+              <option>Criminal Law</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Brief Description</label>
+            <textarea class="form-textarea" placeholder="Briefly describe your matter..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Thulani Mtsuki Attorneys</span>
+    <span>Viecon Centre, 25 Haig Ave, Emalahleni, Mpumalanga · 013 656 6177</span>
+    <span>© 2025 Thulani Mtsuki Attorneys. All rights reserved.</span>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
