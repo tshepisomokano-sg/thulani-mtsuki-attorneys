@@ -67,22 +67,22 @@
             <!-- FORM -->
             <div class="contact-form-area">
                 <p class="section-label">Send a Message</p>
-                <form onsubmit="handleSubmit(event)">
+                <form action="https://formspree.io/f/xeerqqky" method="POST">
                     <div class="form-group">
                         <label class="form-label">Full Name</label>
-                        <input type="text" class="form-input" placeholder="Your full name" required />
+                        <input type="text" name="name" class="form-input" placeholder="Your full name" required />
                     </div>
                     <div class="form-group">
                         <label class="form-label">Phone Number</label>
-                        <input type="tel" class="form-input" placeholder="Your contact number" />
+                        <input type="tel" name="phone" class="form-input" placeholder="Your contact number" />
                     </div>
                     <div class="form-group">
                         <label class="form-label">Email Address</label>
-                        <input type="email" class="form-input" placeholder="Your email address" />
+                        <input type="email" name="email" class="form-input" placeholder="Your email address" />
                     </div>
                     <div class="form-group">
                         <label class="form-label">Legal Matter</label>
-                        <select class="form-select">
+                        <select name="legal_matter" class="form-select">
                             <option value="">Select a practice area</option>
                             <option>Family Law</option>
                             <option>Divorce Law</option>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Brief Description</label>
-                        <textarea class="form-textarea" placeholder="Briefly describe your matter..."></textarea>
+                        <textarea name="message" class="form-textarea" placeholder="Briefly describe your matter..."></textarea>
                     </div>
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>
@@ -109,5 +109,8 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <span class="foote
+        <footer>
+            <span class="footer-logo">Thulani Mtsuki Attorneys</span>
+            <span>31b Botha Ave, eMalahleni, 1034 · 079 601 0697</span>
+            <span>© 2025 Thulani Mtsuki Attorneys. All rights reserved.</span>
+        </footer>
